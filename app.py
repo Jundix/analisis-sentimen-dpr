@@ -190,7 +190,7 @@ def report():
         if os.path.isfile(file):
             os.remove(file)
 
-    path = r"static/chart_record/chart_perbulan//"
+    path = r"static/chart_record//"
     for file_name in os.listdir(path):
         # construct full file path
         file = path + file_name
@@ -237,9 +237,9 @@ def report():
             dframe = pd.read_csv(path_label + r"data with label.csv")
             
             
-    path = r'static/chart_record/chart_perbulan//'
+    path = r'static/chart_record//'
     img = listToString(os.listdir(path))
-    img = 'static/chart_record/chart_perbulan/' + img
+    img = 'static/chart_record/' + img
     with open("static/file_labelled/data with label.csv", encoding='UTF-8') as file:
         table = csv.reader(file)
         header = next(table)
