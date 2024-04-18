@@ -73,9 +73,9 @@ def home():
         bulan = 'Data tidak ada'
         return render_template('index.html', bulan=bulan)       
     else:
-        path_all = r'static/chart_record/chart_all//'
-        img_all = listToString(os.listdir(path_all))
-        img_all = 'static/chart_record/chart_all/' + img_all
+        # path_all = r'static/chart_record/chart_all//'
+        # img_all = listToString(os.listdir(path_all))
+        # img_all = 'static/chart_record/chart_all/' + img_all
         bulan='2024'
         data_positif=[]
         data_negatif=[]
@@ -83,7 +83,7 @@ def home():
             data_positif.append(count)
         for count in negatif:
             data_negatif.append(count)
-        return render_template('index.html',bulan=bulan, img_all=img_all, hasil=hasil, positif=positif, negatif=negatif, result=response)
+        return render_template('index.html',bulan=bulan, hasil=hasil, positif=positif, negatif=negatif, result=response)
     
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -169,11 +169,11 @@ def predict():
             bulan = 'Data tidak ada'
             return render_template('nb.html', Reviews=Reviews, prediction=my_prediction[0], bulan=bulan) 
         else:
-            path_all = r'static/chart_record/chart_all//'
-            img_all = listToString(os.listdir(path_all))
-            img_all = 'static/chart_record/chart_all/' + img_all
+            # path_all = r'static/chart_record/chart_all//'
+            # img_all = listToString(os.listdir(path_all))
+            # img_all = 'static/chart_record/chart_all/' + img_all
             bulan='2024'
-            return render_template('nb.html', Reviews=Reviews, prediction=my_prediction[0],bulan=bulan, img_all=img_all) 
+            return render_template('nb.html', Reviews=Reviews, prediction=my_prediction[0],bulan=bulan) 
     return redirect(url_for('predict')) 
        
 
